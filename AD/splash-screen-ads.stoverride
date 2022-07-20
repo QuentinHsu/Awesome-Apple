@@ -1,0 +1,21 @@
+###############################################################################
+# 开屏 - 去广告
+# author: QuentinHsu
+# create: 2022/07/20
+# update: 2022/07/20
+###############################################################################
+name: 开屏 - 去广告
+desc: 高德地图
+http:
+  force-http-engine:
+    - "ems.youku.com"
+    - "optimus-ads.amap.com"
+
+  mitm:
+    - "ems.youku.com"
+    - "optimus-ads.amap.com"
+
+  rewrite:
+  # 高德地图
+    - ^http:\/\/ems\.youku\.com\/imp\? - reject
+    - ^http:\/\/optimus-ads\.amap\.com\/uploadimg\/.+ - reject
