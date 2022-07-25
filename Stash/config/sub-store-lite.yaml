@@ -28,11 +28,11 @@ dns:
     - '*.msftconnecttest.com'
     # Bilibili CDN
     - '*.mcdn.bilivideo.cn'
-  # 截止 Stash 2.0 build 328，在使用 proxy-groups => ssid-policy 时，在 Wi-Fi 下走直连，部分国内请求会异常，所以暂时不指定。
-  # 如需指定，则请不要在 Wi-Fi 下走直连。
-  # nameserver:
-  #   - https://doh.pub/dns-query
-  #   - https://dns.alidns.com/dns-query
+  # 假如你在使用 proxy-groups => ssid-policy 时，nameserver 下必须配置 system，否则部分请求会异常。
+  nameserver:
+    - system
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
 
 http:
   mitm:
